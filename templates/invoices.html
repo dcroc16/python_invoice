@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Invoice</title>
+		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+	</head>
+	<body>
+		<div id='big_wrapper'>
+		<div id='header'>
+			<h1>Create an Invoice</h1>
+
+			<div id='toolbar'>
+				<a href='/'>Home</a>
+				<a href='/customers'>customers</a>
+				<a href='/materials'>materials</a>
+				<a href='/invoices'>invoices</a>
+			</div>
+
+		</div>
+		<div id='work_area'>
+		<div id='input'>
+			<form action='/add_invoice' method='POST'>
+				<div id='invoice_creation_area'>
+					<table id='invoice_table'>
+					<thead class='tableTitle'>Create Invoice</thead>
+					<thead><th>Invoice Number</th><th>Customer</th><th>Name</th></thead>
+					<tbody>
+					<tr>
+						<td>{{ next }}</td>
+						<td><input class='inputBox' name='customer' type='textbox'/></td>
+						<td>
+							<select name="desc" id="cust_name">
+						    		<option value="blank"></option>
+						    		{% for i in cust_names %}
+										<option class='cust_options' value="{{ i.0 }}">{{ i.1 }}</option>
+						    		{% endfor %}
+							</select>
+
+						</td>
+						<td class='blankCell' ></td>
+						<td class='blankCell' ></td>
+						<td class='blankCell' ><div id='add_row' onclick='addRow()'/>Add Row</div></td>
+					</tr>
+					<tbody>
+					<thead><th>Material</th><th>Description</th><th>Qty</th><th>UOM</th><th>Price</th><th>Amount</th></thead>
+					<tbody>
+						<tr>
+							<td><input class='inputBox' name='material' type='textbox'/></td>
+						    <td>
+						    	<select name="desc" id="main_desc">
+						    		<option value="blank"></option>
+						    		{% for i in item %}
+										<option class='desc_options' value='{{ i.0 }}'>{{ i.1 }}</option>
+						    		{% endfor %}
+								</select>
+						    </td>
+						    <td><input class='inputBox' name='qty' type='textbox'/></td>
+						    <td><input class='inputBox' name='uom' type='textbox'/></td>
+						    <td><input class='inputBox' name='price' type='textbox'/></td>
+						    <td><input class='inputBox' name='amount' type='textbox'/></td>
+						</tr>
+						<tr>
+							<td><input class='inputBox' name='Inovice Number' type='textbox'/></td>
+						    <td>
+						    	<select name="desc">
+						    		<option value="blank"></option>
+						    		{% for i in item %}
+										<option value="{{ i.0 }}">{{ i.1 }}</option>
+						    		{% endfor %}
+								</select>
+						    </td>
+						    <td><input class='inputBox' name='Inovice Number' type='textbox'/></td>
+						    <td><input class='inputBox' name='Inovice Number' type='textbox'/></td>
+						    <td><input class='inputBox' name='Inovice Number' type='textbox'/></td>
+						    <td><input class='inputBox' name='Inovice Number' type='textbox'/></td>
+						</tr>
+						<tr>
+							<td><input class='inputBox' name='Inovice Number' type='textbox'/></td>
+						    <td>
+						    	<select name="desc">
+						    		<option value="blank"></option>
+						    		{% for i in item %}
+										<option value="{{ i.0 }}">{{ i.1 }}</option>
+						    		{% endfor %}
+								</select>
+						    </td>
+						    <td><input class='inputBox' name='Inovice Number' type='textbox'/></td>
+						    <td><input class='inputBox' name='Inovice Number' type='textbox'/></td>
+						    <td><input class='inputBox' name='Inovice Number' type='textbox'/></td>
+						    <td><input class='inputBox' name='Inovice Number' type='textbox'/></td>
+						</tr>
+					<tbody>
+					<tfoot><td class='blankCell'><input type='submit' name='sendButton'/></td></tfoot>
+					</table>
+				</div>
+			</form>
+		</div>
+
+		<div id='results'>
+		<table>
+		<thead class='tableTitle'>Invoice List</thead>
+
+			<thead>
+				<th>Invoice</th>
+				<th>Customer</th>
+				<th>Invoice</th>
+				<th>Customer</th>
+				<th>Invoice</th>
+				<th>Customer</th>
+				<th>Invoice</th>
+				<th>Customer</th>
+
+
+			</thead>
+
+				{% for item in msg %}
+				<tr>
+					<td>{{ item.0 }}</td>
+					<td>{{ item.1 }}</td>
+					<td>{{ item.2 }}</td>
+					<td>{{ item.3 }}</td>
+					<td>{{ item.4 }}</td>
+					<td>{{ item.5 }}</td>
+					<td>{{ item.6 }}</td>
+					<td>{{ item.7 }}</td>
+				</tr>
+				{% endfor %}
+		</table>
+		</div>
+		</div>
+
+		<div id='footer'>
+			
+		</div>
+
+		</div>
+
+	</body>
+	<script type="text/javascript" src="{{ url_for('static', filename='code.js') }}"></script>
+</html>

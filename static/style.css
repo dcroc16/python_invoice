@@ -1,0 +1,96 @@
+body{
+	background-color: #303030;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#big_wrapper{
+	margin: 0 auto;
+	width: 75%;
+	height: 1300px;
+	background-color: white;
+	padding: 0;
+}
+
+table{
+
+	border-collapse: collapse;
+}
+table td{
+	border: 1px solid #303030;
+	width: 150px;
+	padding: 0px;
+	text-align: center;
+
+}
+table thead{
+	background-color: #303030;
+	color: white;
+}
+table th{
+	border: 1px solid #303030;
+	padding 5px;
+}
+#input{
+	border: 1px solid #303030;
+	float: left;
+	margin: 5px;
+	padding: 5px;
+	display: inline;
+}
+#results{
+	border: 1px solid #303030;
+	float: left;
+	margin: 5px;
+	padding: 5px;
+	display: inline;
+}
+.inputBox{
+	width:150px;
+	border: none;
+}
+#toolbar{
+	position: block;
+}
+#header{
+	margin: 0 auto;
+	padding: 10px;
+	background-color: #505050;
+}
+#work_area{
+	padding: 10px;
+}
+.tableTitle{
+	background-color:#505050;
+}
+
+h1{
+	color: white;
+}
+
+#toolbar a:visited{
+	color: white;
+}
+
+#add_row{
+	background-color: Red;
+	width:150px;
+	color: white;
+	text-align: center;
+	box-shadow: -2px 1px 0px #303030;
+	padding: 2px;
+	margin: 2px;
+
+
+}
+#add_row:hover{
+	background-color: #505050;
+	box-shadow: none;
+}
+.blankCell{
+	border: none;
+}
+
+
+
+

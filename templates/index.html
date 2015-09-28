@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+	</head>
+	<body>
+		<div id='results'>
+		<table>
+		<thead><th>Customer</th><th>Name</th></thead>
+		{% for item in msg %}
+		<tr>
+		
+		<td>{{ item.0 }}</td>
+		<td>{{ item.1 }}</td>
+		
+		</tr>
+		{% endfor %}
+		</table>
+		</div>
+		<div id='input'>
+			<form action='/add_customer' method='POST'>
+				<div id='customer_name_area'>
+					<table>
+					<thead><th>Customer Number</th><th>Customer Name</th></thead>
+					<tr><td><input class='inputBox' name='customer' type='textbox'/></td>
+						<td><input class='inputBox' name='customer_name' type='textbox'/></td>
+					</tr>
+					<tfoot><td><input type='submit' name='sendButton'/></td><td></td></tfoot>
+					</table>
+				</div>
+				
+
+			</form>
+
+
+
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="{{ url_for('static', filename='code.js') }}"></script>
+</html>
